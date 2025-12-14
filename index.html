@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>EmulatorJS NES</title>
+
+  <!-- EmulatorJS config MUST come first -->
+  <script>
+    EJS_player = "#game";
+    EJS_core = "nes";
+    EJS_gameUrl = "super-mario-bros-1.nes";
+    EJS_pathtodata = "https://www.smbgames.be/data/";
+    EJS_startOnLoaded = true;
+  </script>
+
+  <!-- Loader comes AFTER config -->
+  <script src="https://www.smbgames.be/data/loader.js"></script>
+</head>
+
+<body style="margin:0; background:black;">
+  <div id="game" style="width:100vw; height:100vh;"></div>
+</body>
+</html>
