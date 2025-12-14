@@ -2,9 +2,11 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>EmulatorJS NES</title>
+  <title>EmulatorJS Test</title>
 
   <script>
+    console.log("CONFIG LOADED");
+
     EJS_player = "#game";
     EJS_core = "nes";
     EJS_gameUrl = "super-mario-bros-1.nes";
@@ -12,10 +14,23 @@
     EJS_startOnLoaded = true;
   </script>
 
-  <script src="https://cdn.emulatorjs.org/latest/data/loader.js"></script>
+  <script src="https://cdn.emulatorjs.org/latest/data/loader.js"
+          onload="console.log('LOADER LOADED')"
+          onerror="console.error('LOADER FAILED')">
+  </script>
 </head>
 
-<body style="margin:0; background:black;">
-  <div id="game" style="width:100vw; height:100vh;"></div>
+<body style="margin:0; background:black; color:white;">
+
+  <div id="status" style="padding:10px;">Waiting…</div>
+  <div id="game" style="width:100vw; height:90vh;"></div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById("status").textContent =
+        "If this text is visible, HTML is running.";
+    }, 1000);
+  </script>
+
 </body>
 </html>
